@@ -24,7 +24,7 @@ package {CurPackage};
     
     JsonArray array();
     
-    for( c in classes( symbols, {symbol:}, includeAllParents=true) ) {
+    for( c in cm.runtime.classes( symbols, {symbol:}, includeAllParents=true) ) {
         if ( c.name != "Object" and  !c.name.contains("{}") ) {
             
             JsonObject obj();
@@ -65,7 +65,7 @@ package {CurPackage};
         }
     }
     
-    File f = cmWritable("test.json").openForWrite();
+    cm.io.File f = cm.io.cmWritable("test.json").openForWrite();
     array.output( new Utf8StreamOutput(f));
     f.close();
     
@@ -74,8 +74,6 @@ package {CurPackage};
 `;
 
 const indexCodeUsings = [
-    "cm.runtime",
-    "cm.io",
     "cm.format.json"
 ];
 
