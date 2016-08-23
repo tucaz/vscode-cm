@@ -37,7 +37,8 @@ export class cmUtils {
         var matchIndex = root.indexOf("\\home\\");
 
         if (matchIndex > -1) {
-            root = root.substring(matchIndex + toMatch.length).replace('\\', '.');
+            // root = root.substring(matchIndex + toMatch.length).replace('\\', '.');
+            root = root.substring(matchIndex + toMatch.length).replace(/\\/g, '.');
         }
 
         return root;
