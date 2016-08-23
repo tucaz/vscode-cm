@@ -23,7 +23,6 @@ function vscodeKindFromCmCodeClass(kind: string): vscode.CompletionItemKind {
         default:
             return vscode.CompletionItemKind.Method;
     }
-    return vscode.CompletionItemKind.Property;
 }
 
 export class CMCompletionItemProvider implements vscode.CompletionItemProvider {
